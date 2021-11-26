@@ -6,7 +6,11 @@ files:
 
 permissions:
   - object: /home/uc2-user/test/script/*
-    pattern: 755
+    owner: root
+    group: root
+    mode: 750
+    type:
+      - file
 hooks:
   ApplicationStop:
     - location: /script/stop.sh
