@@ -1,2 +1,2 @@
-nohup java -Dserver.port=80 -jar /home/ec2-user/test/build/libs/dockerDemo-0.0.1-SNAPSHOT.jar 2>&1 \
-      & sleep 1
+nohup java -Dserver.port=80 -jar /home/ec2-user/test/build/libs/dockerDemo-0.0.1-SNAPSHOT.jar \
+      > nohup.out 2>&1 &
