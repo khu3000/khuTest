@@ -3,9 +3,18 @@ os: linux
 files:
   - source: /
     destination: /home/ec2-user/test/
+
+permissions:
+  - object: /home/uc2-user/test/script
+    pattern: 755
 hooks:
-  AfterInstall:
+  ApplicationStop:
+    - location: /script/stop.sh
+      timeout: 100
+      runas: root
+  ApplicationStart:
     # location은 프로젝트 기준으로 위치를 작성해준다!
     - location: /script/start.sh
       # runas를 입력해주지 않으면 간혹 permission error가 날 수도
+      timeout: 100
       runas: root

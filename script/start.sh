@@ -1,2 +1,1 @@
-echo "start.sh"
-pwd
+nohup java -Dserver.port=80 -jar /home/ec2-user/test/build/libs/dockerDemo-0.0.1-SNAPSHOT.jar
