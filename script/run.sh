@@ -1,1 +1,1 @@
-date > testCodeDeploy
+date > /home/ec2-user/testCodeDeploy
