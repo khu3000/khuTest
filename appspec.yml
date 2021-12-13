@@ -13,14 +13,15 @@ permissions:
     type:
       - file
 hooks:
-  #ApplicationStop:
-  #  - location: /script/stop.sh
-  #    timeout: 100
-  #    runas: root
+  ApplicationStop:
+    - location: /script/docker-stop.sh
+      timeout: 300
+      runas: root
+  AfterInstall:
+    - location: /script/docker-pull.sh
+      timeout: 300
+      runas: root
   ApplicationStart:
-    # location은 프로젝트 기준으로 위치를 작성해준다!
-    #- location: /script/start.sh
-    - location: /script/run.sh
-      # runas를 입력해주지 않으면 간혹 permission error가 날 수도
-      timeout: 100
+    - location: /script/docker-run.sh
+      timeout: 300
       runas: root
