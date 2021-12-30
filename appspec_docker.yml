@@ -14,10 +14,14 @@ permissions:
       - file
 hooks:
   ApplicationStop:
-    - location: /script/stop.sh
+    - location: /script/docker-stop.sh
+      timeout: 300
+      runas: root
+  AfterInstall:
+    - location: /script/docker-pull.sh
       timeout: 300
       runas: root
   ApplicationStart:
-    - location: /script/start.sh
+    - location: /script/docker-run.sh
       timeout: 300
       runas: root
