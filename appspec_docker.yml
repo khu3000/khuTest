@@ -5,7 +5,7 @@ files:
     destination: /home/ec2-user/test/
 
 permissions:
-  - object: /home/uc2-user/test/script
+  - object: /home/ec2-user/test/script
     pattern : "*.sh"
     owner: root
     group: root
