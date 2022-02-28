@@ -2,11 +2,10 @@
 echo "> Health check 시작"
 echo "> curl -s http://localhost:8080/hello "
 
-for RETRY_COUNT in {1..30}
+for RETRY_COUNT in {1..15}
 do
   RESPONSE=$(curl -s http://localhost:8080/hello)
-  #UP_COUNT=$(echo $RESPONSE | grep 'Hello' | wc -l)
-  UP_COUNT=$(echo $RESPONSE | grep 'FAIL TEST' | wc -l)
+  UP_COUNT=$(echo $RESPONSE | grep 'Hello' | wc -l)
 
   if [ $UP_COUNT -ge 1 ]
   then # $up_count >= 1 ("UP" 문자열이 있는지 검증)
@@ -17,7 +16,7 @@ do
       echo "> Health check: ${RESPONSE}"
   fi
 
-  if [ $RETRY_COUNT -eq 30 ]
+  if [ $RETRY_COUNT -eq 15 ]
   then
     echo "> Health check 실패. "
     exit 1
