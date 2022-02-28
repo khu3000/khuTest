@@ -25,3 +25,5 @@ hooks:
     - location: /script/docker-run.sh
       timeout: 300
       runas: root
+  AllowTraffic:
+    - timeout: 240
