@@ -2,7 +2,7 @@
 echo "> Health check 시작"
 echo "> curl -s http://localhost:8080/hello "
 
-for RETRY_COUNT in {1..15}
+for RETRY_COUNT in {1..30}
 do
   RESPONSE=$(curl -s http://localhost:8080/hello)
   #UP_COUNT=$(echo $RESPONSE | grep 'Hello' | wc -l)
