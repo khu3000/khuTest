@@ -1,3 +1,3 @@
-sudo docker stop docker-demo
-sudo docker rm docker-demo
+sudo docker stop docker-demo1
+sudo docker rm docker-demo1
 exit 1
