@@ -6,12 +6,10 @@ files:
 
 permissions:
   - object: /home/ec2-user/test/script
-    pattern : "*.sh"
-    owner: root
-    group: root
-    mode: 750
-    type:
-      - file
+    pattern: "**"
+    owner: ec2-user
+    group: ec2-user
+
 hooks:
   ApplicationStop:
     - location: /script/docker-stop.sh
