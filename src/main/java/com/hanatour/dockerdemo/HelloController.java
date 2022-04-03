@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloController {
     @RequestMapping("/hello")
     public String hello() {
-        return "Hello, Spring boot! docker-demo 0402 aa";
+        return "Hello, Spring boot! docker-demo 0402 aa bb";
     }
 
 }
